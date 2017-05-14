@@ -31,19 +31,78 @@ body
 			.flex.mt
 				div
 					h2.magenta Magenta
-					h3 #BA007C
+					h3 #EB008B
 					h3 R235 G0 B139
 					h3 C0 M100 Y0 K0
+					h3 Pantone Proccess Magenta C
 				div
 					h2.black Black
 					h3 #000000
 					h3 R0 G0 B0
 					h3 C0 Y0 M0 K100
+					h3 Pantone Proccess Black C
 				div
 					h2.white White
 					h3 #FFFFFF
 					h3 R255 G255 B255
 					h3 C0 M0 Y0 K0
+					h3 Pantone White
 		section.typography
 			h1 Typography
 			p Our institutional font for web & print
+			h2.mt Our main font is Adelle Sans
+			.flex.mt
+				div
+					h3 Light weight
+					img(src="img/typography/main_light.png", alt="adelle sans light")
+				div
+					h3 Bold weight
+					img(src="img/typography/main_bold.png", alt="adelle sans bold")
+			h2.mt As an alternative, Arial may be used
+			.flex.mt
+				div
+					h3 Regular weight
+					img(src="img/typography/alt_regular.png", alt="arial regular")
+				div
+					h3 Bold weight
+					img(src="img/typography/alt_bold.png", alt="arial bold")
+		section.donts
+			h1 Undue uses
+			p Some stylings that you can't do with Movile's logo
+			mixin donts(title, img)
+					div
+						p= "Don't "+title
+						img(src="img/donts/"+img+".png", alt="Don't "+title)
+			.flex.mt
+				+donts("alter the color", "dont-alterar-cor")
+				+donts("alter the proportion","dont-alterar-proporcao")
+				+donts("apply shadows", "dont-drop-shadow")
+				+donts("invert the colors","dont-inverter-cores")
+			.flex.mt
+				+donts("use as a watermark", "dont-marca-dagua")
+				+donts("use an outline version","dont-outline")
+				+donts("alter the logo/slogan proportion","dont-proporcao-slogan")
+				+donts("rotate","dont-rotacionar")
+			.flex.mt
+				+donts("use it as the word 'Movile' ","dont-word")
+				+donts("change the slogan position","dont-slogan-top")
+				+donts("apply strokes","dont-stroke")
+				+donts("change the font","dont-tipografia")
+		section.photography
+			h1 Photographic backgrounds
+			p In short, always value the contrast between background and brand.
+			mixin photo(tipo, text, number)
+				div
+					p= text
+					img(src="img/fotografico/fundo"+tipo+number+".png", alt=text)
+			.flex.mt
+				+photo("errado","Do not use the white option on light backgrounds.","1")
+				+photo("certo","","1")
+			.flex.mt
+				+photo("errado","Do not use the black version on dark backgrounds.","2")
+				+photo("certo","","2")
+			.flex.mt
+				+photo("errado","Do not apply the logo with the same focus as the background.","3")
+				+photo("certo","","3")
+
+			
