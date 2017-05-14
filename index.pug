@@ -7,7 +7,15 @@ body
 		header
 			img(src="img/logo_movile.png", alt="logo da movile")
 			p Brand identity
-		section.logo
+		.nav
+			a(href="#logo") Logo
+			a(href="#colors") Colors
+			a(href="#typography") Typography
+			a(href="#donts") Undue uses
+			a(href="#photography") Photo background
+			a(href="#protection") Protection area
+			a(href="#reduction") Maximun reduction
+		section.logo#logo
 			h1 Our logo
 			p Click on the logo to download the files
 			.flex
@@ -25,7 +33,7 @@ body
 						img(src="img/preferenciais/monocor-fundo-magenta.png", alt="logo movile fundo branco")
 					a(href="img/preferenciais/download/logo-movile-branco.zip" download)
 						img(src="img/preferenciais/monocor-fundo-preto.png", alt="logo movile fundo branco")
-		section.color
+		section.color#color
 			h1 Colors
 			p These are the official colors of Movile
 			.flex.mt
@@ -47,7 +55,7 @@ body
 					h3 R255 G255 B255
 					h3 C0 M0 Y0 K0
 					h3 Pantone White
-		section.typography
+		section.typography#typography
 			h1 Typography
 			p Our institutional font for web & print
 			h2.mt Our main font is Adelle Sans
@@ -55,7 +63,7 @@ body
 				div
 					h3 Light weight
 					img(src="img/typography/main_light.png", alt="adelle sans light")
-				div
+				div.mts
 					h3 Bold weight
 					img(src="img/typography/main_bold.png", alt="adelle sans bold")
 			h2.mt As an alternative, Arial may be used
@@ -63,10 +71,10 @@ body
 				div
 					h3 Regular weight
 					img(src="img/typography/alt_regular.png", alt="arial regular")
-				div
+				div.mts
 					h3 Bold weight
 					img(src="img/typography/alt_bold.png", alt="arial bold")
-		section.donts
+		section.donts#donts
 			h1 Undue uses
 			p Some stylings that you can't do with Movile's logo
 			mixin donts(title, img)
@@ -74,35 +82,71 @@ body
 						p= "Don't "+title
 						img(src="img/donts/"+img+".png", alt="Don't "+title)
 			.flex.mt
-				+donts("alter the color", "dont-alterar-cor")
-				+donts("alter the proportion","dont-alterar-proporcao")
-				+donts("apply shadows", "dont-drop-shadow")
-				+donts("invert the colors","dont-inverter-cores")
-			.flex.mt
-				+donts("use as a watermark", "dont-marca-dagua")
-				+donts("use an outline version","dont-outline")
-				+donts("alter the logo/slogan proportion","dont-proporcao-slogan")
-				+donts("rotate","dont-rotacionar")
-			.flex.mt
-				+donts("use it as the word 'Movile' ","dont-word")
-				+donts("change the slogan position","dont-slogan-top")
-				+donts("apply strokes","dont-stroke")
-				+donts("change the font","dont-tipografia")
-		section.photography
+				div
+					+donts("alter the color", "dont-alterar-cor")
+					+donts("alter the proportion","dont-alterar-proporcao")
+				div
+					+donts("apply shadows", "dont-drop-shadow")
+					+donts("invert the colors","dont-inverter-cores")
+			.flex.mt.nmts
+				div
+					+donts("use as a watermark", "dont-marca-dagua")
+					+donts("use an outline version","dont-outline")
+				div
+					+donts("alter the slogan size","dont-proporcao-slogan")
+					+donts("rotate","dont-rotacionar")
+			.flex.mt.nmts
+				div
+					+donts("use it as the word 'Movile' ","dont-word")
+					+donts("change the slogan position","dont-slogan-top")
+				div
+					+donts("apply strokes","dont-stroke")
+					+donts("change the font","dont-tipografia")
+		section.photography#photography
 			h1 Photographic backgrounds
 			p In short, always value the contrast between background and brand.
 			mixin photo(tipo, text, number)
 				div
-					p= text
 					img(src="img/fotografico/fundo"+tipo+number+".png", alt=text)
-			.flex.mt
+			h3.mt Do not use the white option on light backgrounds.
+			.flex
 				+photo("errado","Do not use the white option on light backgrounds.","1")
-				+photo("certo","","1")
-			.flex.mt
+				+photo("certo","Apply the logo against a contrasting background.","1")
+			h3.mt Do not use the black version on dark backgrounds.
+			.flex
 				+photo("errado","Do not use the black version on dark backgrounds.","2")
-				+photo("certo","","2")
-			.flex.mt
+				+photo("certo","Use other versions of the logo which adapt to the background.","2")
+			h3.mt Do not apply the logo with the same focus as the background.
+			.flex
 				+photo("errado","Do not apply the logo with the same focus as the background.","3")
-				+photo("certo","","3")
+				+photo("certo","Apply the logo on unfocused areas.","3")
+		section.protection#protection
+			h1 Protection area
+			p When applying the logo, the protection area should be observed (space at top, bottom and sides).
+			.flex.mt
+				div
+					p Protection area with slogan:
+					img(src="img/protecao/protecao1.png", alt="Protection area with slogan")
+				div.mts
+					p Protection area without slogan:
+					img(src="img/protecao/protecao2.png", alt="Protection area without slogan")
+		section.reduction#reduction
+			h1 Maximum reduction
+			p Pay attention to the size of the logo’s exhibition.
+			.flex.mt
+				div
+					p In pixels:
+					img(src="img/reducao/reducao1.png", alt="Maximum reduction in pixels")
+				div.mts
+					p In millimeters:
+					img(src="img/reducao/reducao2.png", alt="Maximum reduction in millimeters")
+		.nav
+			a(href="#logo") Logo
+			a(href="#colors") Colors
+			a(href="#typography") Typography
+			a(href="#donts") Undue uses
+			a(href="#photography") Photo background
+			a(href="#protection") Protection area
+			a(href="#reduction") Maximun reduction
 
 			
